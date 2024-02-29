@@ -17,11 +17,9 @@ def allowed_file(filename):
 def augment_images(input_path, output_path, num_augmented_images=5):
     # Ensure the output path exists
     os.makedirs(output_path, exist_ok=True)
-    print('done step 1')
 
     # List all image files in the input path
     image_files = [f for f in os.listdir(input_path) if f.endswith(('.jpg', '.jpeg', '.png'))]
-    print('done step 2')
 
     # Define augmentation pipeline
     seq = iaa.Sequential([
@@ -33,17 +31,14 @@ def augment_images(input_path, output_path, num_augmented_images=5):
     iaa.Add((-50, 50)), from_colorspace=iaa.CSPACE_BGR),
     iaa.GammaContrast((0.5, 2.0))
     ])
-    print('done step 3')
 
     for image_file in image_files:
         # Load the image
         image_path = os.path.join(input_path, image_file)
         image = cv2.imread(image_path)
-        print('done step 4')
 
         # Apply augmentation to create multiple augmented images
         augmented_images = [seq.augment_image(image) for _ in range(num_augmented_images)]
-        print('done step 5')
 
         # Save augmented images to the output path
         base_name, ext = os.path.splitext(image_file)
@@ -51,7 +46,6 @@ def augment_images(input_path, output_path, num_augmented_images=5):
             output_file = f"output{i+1}{ext}"
             output_file_path = os.path.join(output_path, output_file)
             cv2.imwrite(output_file_path, augmented_image)
-        print('done step 6')
 
 def clear_folders():
     # Clear contents of augmented_images folder
@@ -87,7 +81,6 @@ def index():
             file.save(filename)
 
             augment_images(UPLOAD_FOLDER, AUGMENTED_FOLDER, count)
-            print('done step 0')
 
             return redirect(url_for('output'))
 
