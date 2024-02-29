@@ -20,6 +20,8 @@ Image augmentation is a powerful technique in computer vision that artificially 
 Visit the following link 
 
 [Click to visit website](https://aditya-augmentor.onrender.com/)
+
+
 ![Display of website](https://github.com/arch-adi21/Simple-Augmentor/assets/155255348/5fc55ec2-9e14-4420-9da7-22ab9da099dc)
 
 
