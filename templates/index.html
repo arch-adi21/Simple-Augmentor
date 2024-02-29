@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Augmentation App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <style>
+        body {
+            background: radial-gradient(circle at center, #2a2d2f 0%, #616763 100%); /* Blue-green radial gradient */
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff; /* Change text color to white for contrast */
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5); /* Adds depth to text */
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); /* Add subtle text shadow */
+        }
+
+        form {
+            width: 400px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0); /* Semi-transparent white background */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle box shadow for depth */
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #f9f9f9; /* Adjust label text color */
+        }
+
+        input[type="file"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px 20px;
+            background-color: #3498db; /* Adjust button color */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #59b929; /* Adjust button hover color */
+        }
+    </style>
+</head>
+<body>
+    <h1>Image Augmentation App</h1>
+
+    <form action="/index" method="post" enctype="multipart/form-data">
+        <label for="file">Select Image:</label>
+        <input type="file" name="file" accept=".jpg, .jpeg, .png, .gif" required><br>
+
+        <label for="count">Number of Augmented Images:</label>
+        <input type="number" name="count" min="2" max="100" required><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <h3>Created and maintained by :- <a href="www.github.com/arch-adi21">arch-adi21</a></h3>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Augmented Images</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <style>
+        body {
+            background: radial-gradient(circle at center, #2a2d2f 0%, #616763 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff; /* Change text color to white for contrast */
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5); /* Adds depth to text */
+        }
+
+        .card {
+            display: inline-block;
+            margin: 10px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f5f5f5;
+            width: 250px; /* Adjust card width as needed */
+        }
+
+        .card img {
+            width: 100%; /* Adjust image width as needed */
+        }
+    </style>
+</head>
+<body>
+    <h1>Augmented Images</h1>
+
+    <div class="row">
+        {% for image in images %}
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="{{ url_for('static', filename='augmented_images/' + image) }}" alt="Augmented Image">
+                    <a href="{{ url_for('download', filename=image) }}" download=" {{ image }} " class="btn btn-primary">Download</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+</body>
+</html>
