@@ -1,5 +1,4 @@
 from flask import Flask, render_template, request, redirect, url_for, send_from_directory
-import Augmentor
 import shutil
 import os
 from imgaug import augmenters as iaa
