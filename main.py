@@ -7,7 +7,7 @@ import cv2
 
 app = Flask(__name__, static_url_path='/static')
 
-PROJECT_FOLDER = os.path.expanduser('~/Desktop/AugmentationApp')
+PROJECT_FOLDER = os.path.dirname(os.path.abspath(__file__))
 UPLOAD_FOLDER = os.path.join(PROJECT_FOLDER, 'static/uploads')
 AUGMENTED_FOLDER = os.path.join(PROJECT_FOLDER, 'static/augmented_images')
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
